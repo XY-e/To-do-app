@@ -1,0 +1,105 @@
+*{
+    margin:0; 
+    padding:0;
+    font-family:'poppins',sans-serif;
+    box-sizing : border-box;
+}
+.container{ /*. represent it is a class */ 
+    width:100%; /*100% = taking up 100% of the <div>'s width = max of <div>'s width is 550px */
+    min-height:100vh;/*100vh = 100vh = 100% of viewport height = taking up 100% of the <div>'s height*/
+    background:linear-gradient(135deg,#153677,#4e085f);
+    padding:10px;
+}
+
+.todo-app{
+    width:100%;
+    max-width:540px;
+    background:#fff;
+    margin:100px auto 20px; /* margin: <top> <right> <bottom> <left>;*/ 
+    /* Top margin: 100px ; Right margin: auto ; Bottom margin: 20px ; Left margin: auto (defaults to right margin value)*/
+    padding:40px 30px 70px; /*padding: <top> <right> <bottom> <left>; */
+    /* Top padding = 40px ; Right padding = 30px ; Bottom padding = 70px ; Left padding = 30px (defaults to right padding value) */
+    border-radius:10px;
+}
+.todo-app h2{ /*h2 inside todo-app*/
+    color: #002765;
+    display:flex; 
+    align-items:center;
+    margin-bottom:20px;
+}
+.todo-app h2 img{ 
+    width:30px;
+    margin-left:10px;
+}
+
+.row{
+    display:flex; 
+    align-items:center;
+    justify-content:space-between; /*The value space-between evenly distributes the space between flex items.*/
+    background:#edeef0;
+    border-radius:30px;
+    padding-left: 20px; 
+    margin-bottom:25px;
+}
+
+input{
+    flex:1;
+    border:none; /*flex: 1; is a common way to create flexible layouts where items grow or shrink to occupy available space proportionally*/
+    outline:none;
+    background:transparent;
+    padding:10px;
+}
+button{
+    border:none;
+    outline:none;
+    padding:16px 50px;
+    background:#ff5945;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer; 
+    border-radius:40px; 
+}
+ul li{
+    list-style:none; /*used to remove the default list styling from HTML lists */
+    font-size:17px;
+    padding : 12px 8px 12px 50px;
+    user-select:none;
+    cursor:pointer;
+    position:relative; 
+}
+ul li::before{ /*or ul li::after*/
+    content:'';/*no any content in front of "ul li' */
+    position:absolute; /* This position is absolute , so the position of 'ul li' must be relative */
+    height:28px;
+    width:20px;
+    border-radius:50%;
+    background-image:url(images/unchecked.png);
+    background-size:cover;
+    background-position:center; 
+    top:12px;
+    left:8px;
+}
+ul li.checked{
+    color:#555;
+    text-decoration:line-through;
+}
+ul li.checked::before{
+    background-image:url(images/checked.png);
+}
+
+ul li span{
+    position:absolute;
+    right:0;
+    top:5px;
+    width:40px;
+    height: 40px;
+    font-size:22px;
+    color:#555;
+    line-height: 40px;
+    text-align:center;  
+    border-radius:50%;
+}
+
+ul li span:hover{
+    background:#edeef0;
+}
